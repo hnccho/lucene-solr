@@ -71,6 +71,10 @@ public class GroupingSearch {
     this(new TermGroupSelector(groupField), null);
   }
 
+  /**
+   * Constructs a <code>GroupingSearch</code> instance that groups documents using a {@link GroupSelector}
+   * @param groupSelector a {@link GroupSelector} that defines groups for this GroupingSearch
+   */
   public GroupingSearch(GroupSelector<?> groupSelector) {
     this(groupSelector, null);
   }
@@ -82,7 +86,7 @@ public class GroupingSearch {
    * @param groupFunction      The function to group by specified as {@link ValueSource}
    * @param valueSourceContext The context of the specified groupFunction
    */
-  public GroupingSearch(ValueSource groupFunction, Map<?, ?> valueSourceContext) {
+  public GroupingSearch(ValueSource groupFunction, Map<Object, Object> valueSourceContext) {
     this(new ValueSourceGroupSelector(groupFunction, valueSourceContext), null);
   }
 
